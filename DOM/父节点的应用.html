@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function()
+        {
+            var aA=document.getElementsByTagName('a');
+            for(var i=0;i<aA.length;i++)
+            {
+                aA[i].onclick=function()
+                {
+                    this.parentNode.style.display='none';
+
+                };
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>adfasd<a href="javascript:;">隐藏</a></li>
+        <li>235567<a href="javascript:;">隐藏</a></li>
+        <li>dalfjasldjl<a href="javascript:;">隐藏</a></li>
+        <li>hbdfksnd<a href="javascript:;">隐藏</a></li>
+        <li>mnbcx<a href="javascript:;">隐藏</a></li>
+    </ul>
+</body>
+</html>

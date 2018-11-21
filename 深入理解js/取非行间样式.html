@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+        }
+        #div1
+        {
+           width:200px;
+           height:200px;
+           background:red; 
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var oDiv=document.getElementById('div1');
+            //alert(oDiv.style.width); //获取行间样式
+            //alert(oDiv.currentStyle.width);//只兼容ie，其他的无效
+            //alert(getComputedStyle(oDiv,false).width);//chrome,FF
+            //alert(oDiv.currentStyle);
+            if(oDiv.currentSyle)
+            {
+                //IE
+                alert(oDiv.currentStyle.width);
+            }
+            else
+            {
+                //FF
+                alert(getComputedStyle(oDiv,false).width);
+            }
+        };
+    </script>
+</head>
+<body>
+     <div id="div1" >
+    </div>
+</body>
+</html>

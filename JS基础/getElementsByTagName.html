@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            float: left;
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var aDiv=document.getElementsByTagName('div');
+
+            //alert(aDiv.length);
+            /*
+            aDiv[0].style.background='red';
+            aDiv[1].style.background='red';
+            aDiv[2].style.background='red';
+            aDiv[3].style.background='red';
+            */
+            //用循环
+
+            for(var i=0;i<4;i++)
+            {
+                aDiv[i].style.background='red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

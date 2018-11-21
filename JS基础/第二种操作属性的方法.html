@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function setText(name)
+        {
+            var a='value';
+            var oTxt=document.getElementById('txt1');
+            //第一种操作属性的方法
+            //oTxt.value='dlajfldjal';
+            //第二种操作属性的方法
+            oTxt[name]='ajflkdadjfl;aj';
+        }
+    </script>
+</head>
+<body>
+<input id='txt1' type="text"/>
+<input type="button" value="改变文字" onclick="setText('title')"/>
+</body>
+</html>

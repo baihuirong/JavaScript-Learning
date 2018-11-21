@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            border: 1px solid black;
+        }
+        .box{
+            background: red;
+        }
+    </style>
+    <script>
+        function toRed()
+        {
+            var oDiv=document.getElementById('div1');
+            //oDiv.style.background='red';
+           oDiv.className='box';
+        }
+        function toGreen()
+        {
+            var oDiv=document.getElementById('div1');
+            //oDiv.style.background='red';
+           oDiv.style.background='green';
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="变红" onclick="toRed()"/>
+    <input type="button" value="变绿" onclick="toGreen()"/>
+    <div id="div1">
+    </div>
+</body>
+</html>

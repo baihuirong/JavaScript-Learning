@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function()
+        {
+            var aA=document.getElementsByTagName('a');
+            var oUl=document.getElementById('ul1');
+
+            for(var i=0;i<aA.length;i++)
+            {
+                aA[i].onclick=function()
+                {
+                    oUl.removeChild(this.parentNode);
+                };
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>sajlslfjdkl<a href="javascript:;">删除</a></li>
+        <li>343656<a href="javascript:;">删除</a></li>
+        <li>yutryiyui<a href="javascript:;">删除</a></li>
+        <li>smbncvbcx<a href="javascript:;">删除</a></li>
+        
+    </ul>
+</body>
+</html>
