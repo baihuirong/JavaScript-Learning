@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #parent
+    {
+        width:600px;
+        height: 20px;
+        background: #ccc;
+        position: relative;
+        margin: 10px auto;
+    } 
+    #div1{
+        width:20px;
+        height: 20px;
+        background: red;
+        position: absolute;
+        left:0;
+        top:0;
+    }
+    #div2{
+        width:400px;
+        height:300px;
+        border: 1px solid black;
+        overflow: hidden;
+        position: relative;
+
+    }
+    #div3{
+        position: absolute;
+        left:0;
+        top:0;
+    }
+    </style>
+    <script>
+        window.onload=function ()
+        {
+            var oDiv=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+            var oDiv3=document.getElementById('div3');
+            var oParent=document.getElementById('parent');
+            
+            var disX=0;
+           // var disY=0;不需要上下移动，把y的值都删掉
+            
+            oDiv.onmousedown=function (ev)
+            {
+                var oEvent=ev||event;
+                
+                disX=oEvent.clientX-oDiv.offsetLeft;
+                
+                document.onmousemove=function (ev)
+                {
+                    var oEvent=ev||event;
+                    var l=oEvent.clientX-disX;
+
+                    if(l<0)
+                    {
+                        l=0;
+                    }else if(l>oParent.offsetWidth-oDiv.offsetWidth)//父级-自己
+                    {
+                        l=oParent.offsetWidth-oDiv.offsetWidth;
+                    }
+                    
+                    oDiv.style.left=l+'px';
+
+                    var scale=l/(oParent.offsetWidth-oDiv.offsetWidth);
+                    document.title=scale;
+
+                    oDiv3.style.top=-scale*(oDiv3.offsetHeight-oDiv2.offsetHeight)+'px';
+                };
+                
+                document.onmouseup=function ()
+                {
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                
+                return false;	//chrome、ff、IE9
+            };
+        };
+</script>
+</head>
+<body>
+    <div id="parent">
+        <div id="div1"></div>
+    </div>
+    <div id="div2">
+        <div id="div3">
+            今天下午收到了阿里小哥哥的电话，最后说到了今天的结果会进行提交，现在还不知道情况
+1.简单的介绍一下你自己，你知道哪些技术
+2.为什么要选择web前端
+3.比较厉害的技术
+4.我自己提到了项目，人家具体的问了一下技术。
+5.聊了一些不是技术的东西，（这更难啊）
+6.说promise，没有promise怎么办
+7.事件委托
+8.jquery源代码
+9.后端的技术。。。
+10.要突破什么方面。
+11.node问了一些。
+ 
+ 
+面试官依然的人很好，给了我不少建议，谈论中我们还说到了es6，我说我崇拜阮一峰老师，最后小哥哥说老师是他们团队的。哇哇哇哇！！
+这次真是太感谢的面试官了，过不过我都很开心，还要不断努力。
+ 
+最后一句话：
+秋天见！
+（不喜欢千万不要喷吖，可别说题这么简单还不过啥的，扎心（笑哭））
+
+再来一份图片版的面试题
+
+这次面试的爱奇艺公司
+本人 非科班 数学 大三 211学校
+今天面试的格外不同是微信聊天：（有些没记住）
+1.说说盒子模型
+2.display
+3.说说vue react angularjs jquery的区别。
+4.聊聊项目
+5.问了一段js代码，输出结果是什么
+6.口述数组去重
+7.jquery的一个方法的实现原理
+8.怎么实现分栏
+9.怎么隐藏一个元素
+10.怎么用原生的js实现jquery的一个特定方法（你自己选的，我选的toggle）
+11.js的数据类型
+12.。。。。。
+今天这次面试聊的挺开心的，忘记记录问题了，不过人家也说今天问的题量有点大了，面试45分钟（我说话快），其他的问题我记不住了。
+希望这样能帮到你们吧，面试官人很好，直接告诉我让等下一次面试。今天真是谢谢给我机会了。
+最后还是这句话：
+秋天见！
+（不喜欢千万不要喷吖，可别说题这么简单还不过啥的，扎心（笑哭））
+ 
+        </div>
+    </div>
+</body>
+</html>

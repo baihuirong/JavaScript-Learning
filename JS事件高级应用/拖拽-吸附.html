@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+        #div2{
+            width:800px;
+            height:500px;
+            background:#ccc;
+            position: relative;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            var oDiv=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+
+            var disX=0;
+            var disY=0;
+
+            oDiv.onmousedown=function()
+            {
+                disX=event.clientX-oDiv.offsetLeft;//鼠标的位置-div的位置
+                disY=event.clientY-oDiv.offsetTop;
+
+                document.onmousemove=function()
+                {
+                    var l=event.clientX-disX;
+                    var t=event.clientY-disY;
+
+                    if(l<50)//从左边拖出去了
+                    {
+                        //alert('a');
+                        l=0;
+                    }else if(l>oDiv2.offsetWidth-oDiv.offsetWidth)
+                    {
+                        //从右边出去了
+                        l=oDiv2.offsetWidth-oDiv.offsetWidth;
+                    }
+
+                    if(t<50)
+                    {
+                        t=0;
+                    }
+                    else if(t>oDiv2.offsetHeight-oDiv.offsetHeight)
+                    {
+                        t=oDiv2.offsetHeight-oDiv.offsetHeight;
+                    }
+
+
+                    oDiv.style.left=l+'px';
+                    oDiv.style.top=t+'px';
+
+                    
+
+                };
+                document.oDiv.onmouseup=function()
+                {
+                    document.onmousemove=null;
+                    oDiv.onmouseup=null;
+                };
+
+                return false;
+                
+        };   
+    }
+    </script>
+</head>
+<body>
+    <div id="div2">
+        <div id="div1"></div>
+    </div>
+    
+</body>
+</html>

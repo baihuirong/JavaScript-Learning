@@ -7,8 +7,8 @@
     <title>Document</title>
     <style>
         #div1{
-            width:200px;
-            height: 200px;
+            width:100px;
+            height:100px;
             background: red;
             position: absolute;
         }
@@ -17,6 +17,7 @@
         window.onload=function()
         {
             var oDiv=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
 
             var disX=0;
             var disY=0;
@@ -24,26 +25,36 @@
             oDiv.onmousedown=function()
             {
                 disX=event.clientX-oDiv.offsetLeft;//鼠标的位置-div的位置
-                disX=event.clientY-oDiv.offsetTop;
+                disY=event.clientY-oDiv.offsetTop;
 
                 document.onmousemove=function()
                 {
-                    oDiv.style.left=event.clientX-disX+'px';
-                    oDiv.style.top=event.clientY-disY+'px';
+                    var l=event.clientX-disX;
+                    var t=event.clientY-disY;
+
+                    oDiv.style.left=l+'px';
+                    oDiv.style.top=t+'px';
+
+                    
 
                 };
                 document.oDiv.onmouseup=function()
                 {
                     document.onmousemove=null;
                     oDiv.onmouseup=null;
-                }
                 };
 
-            
-        }
+                return false;//chrome\ff\ie9
+        };   
+    }
     </script>
 </head>
 <body>
-    <div id="div1"></div>
+    aaaaaaaaaaaaafasdfsfgdfg<br>
+    ueworqwiepoitryrii
+    <div id="div1">xvm,zncb,mz;flkdf<br>
+    dhfakjsdoifqu3w2ryqewiruj</div>
+    aaaaaaaaaaaaafasdfsfgdfg<br>
+    ueworqwiepoitryrii  
 </body>
 </html>

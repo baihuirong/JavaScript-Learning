@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function()
+        {
+            var oBtn=document.getElementById('btn1');
+
+            if(oBtn.attachEvent)
+            {
+                oBtn.attachEvent('onclick',function(){
+                    alert('a');
+                });
+                oBtn.attachEvent('onclick',function(){
+                    alert('b');
+                });
+            }
+            else
+            {
+                oBtn.addEventListener('click',function()
+                {
+                    alert('a');
+                },false);
+
+                oBtn.addEventListener('click',function()
+                {
+                    alert('b');
+                },false);
+            }
+
+            //attachEvent(事件名，函数)——ie
+           /* oBtn.attachEvent('onclick',function(){
+                alert('a');
+            });
+            oBtn.attachEvent('onclick',function(){
+                alert('b');
+            });*/
+            //FF
+            //addEventListener(事件名，函数，false)
+
+            /*
+            oBtn.addEventListener('click',function()
+            {
+                alert('a');
+            },false);
+
+            oBtn.addEventListener('click',function()
+            {
+                alert('b');
+            },false);
+            */
+
+            /*
+            oBtn.onclick=function()
+            {
+                alert('a');
+            };
+            oBtn.onclick=function()
+            {
+                alert('b');
+            };*/
+        }
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="按钮"/>
+</body>
+</html>
