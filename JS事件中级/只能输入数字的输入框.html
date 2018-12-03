@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function()
+        {
+            var oTxt=document.getElementById('txt1');
+
+            //0----48
+            //9----57
+            //如果用户按的 不是退格（8） 并且 也不是数字
+
+            oTxt.onkeydown=function()
+            {
+                if(event.keyCode!=8 && (event.keyCode<48||event.keyCode>57))
+                {
+                      return false;
+                }
+              
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1"/>
+</body>
+</html>
