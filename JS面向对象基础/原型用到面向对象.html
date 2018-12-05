@@ -1,0 +1,48 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function createPerson(name,qq) //构造函数
+        {
+            //(浏览器)系统偷偷替咱们做一件事情->创建一个空白对象 =》obj->this
+            //var this=new Object();
+            
+            //加工
+            this.name=name;
+            this.qq=qq;
+            
+            //也会偷偷做一些事情obj->this
+            //return this;
+        }
+
+        createPerson.prototype.showName=function()
+        {
+            alert('我的名字叫：'+this.name);
+        };
+
+        createPerson.prototype.showQQ=function()
+        {
+            alert('我的qq是：'+this.qq);
+        };
+
+        var obj=new createPerson('blue','123456');
+        var obj2=new createPerson('www','2222');
+
+        /*obj.showName();
+        obj.showQQ();
+
+        obj2.showName();
+        obj2.showQQ();//奏效
+        */
+        alert(obj.showName==obj2.showName);//true;都有一个原型上面的showname方法
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
