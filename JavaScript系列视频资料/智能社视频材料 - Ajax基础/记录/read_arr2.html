@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>无标题文档</title>
+<script src="ajax.js"></script>
 <script>
 window.onload=function ()
 {
@@ -10,15 +11,18 @@ window.onload=function ()
 	
 	oBtn.onclick=function ()
 	{
-		alert('a');
+		ajax('arr2.txt?t='+new Date().getTime(), function (str){
+			var arr=eval(str);
+			alert(arr[0].a);
+		}, function (){
+			alert('失败');
+		});
 	};
-	
-	oBtn.setCapture();
 };
 </script>
 </head>
 
 <body>
-<input id="btn1" type="button" value="按钮" />
+<input id="btn1" type="button" value="读取" />
 </body>
 </html>
