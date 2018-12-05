@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 input{
+            background: white;
+        }
+        #div1 input.active{
+            background: yellow;
+        }
+        #div1 div{
+            width:200px;
+            height:200px;
+            background: #ccc;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function()
+        {
+            new TabSwitch('div1');
+
+        };
+        function TabSwitch(id)//变为构造函数
+        {
+            var oDiv=document.getElementById(id);
+            this.aBtn=oDiv.getElementsByTagName('input');//变量变为属性
+            this.aDiv=oDiv.getElementsByTagName('div');
+
+            for(var i=0;i<this.aBtn.length;i++)
+            {
+                this.aBtn[i].index=i;
+                this.aBtn[i].onclick=this.fnClick;//函数变方法，前面加this
+            }
+        };
+        TabSwitch.prototype.fnClick = function()//函数变为方法
+        {
+            for(var i=0;i<this.aBtn.length;i++)
+            {
+                this.aBtn[i].className='';
+                this.aDiv[i].style.display='none';
+            }
+            oBtn.className='active';
+            this.aDiv[this.index].style.display='block';
+        };
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <input class="active" type="button" value="aaa"/>
+        <input type="button" value="bbb"/>
+        <input type="button" value="ccc"/>
+    <div style="display:block;">111</div>
+    <div>aaa</div>
+    <div>cccc</div>
+    </div>
+</body>
+</html>
