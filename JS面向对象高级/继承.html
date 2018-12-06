@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function A()
+        {
+            this.abc=12;
+        }
+
+        A.prototype.show=function()
+        {
+            alert(this.abc);
+        };
+
+        //继承A
+
+        function B()
+        {
+            A.call(this);
+            //this是new出来的B
+
+        }
+
+        B.prototype=A.prototype;
+
+        var obj=new B();
+
+        //alert(obj.abc);
+        obj.show();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
