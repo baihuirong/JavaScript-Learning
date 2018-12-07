@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function setCookie(name,value,iDay)
+        {
+            var oDate=new Date();
+            oDate.setDate(oDate.getDate()+iDay);
+
+            document.cookie=name+'='+value+';expires='+oDate;
+        }
+
+        setCookie('userName','baihuirong',365);
+        setCookie('password','123456',14);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
