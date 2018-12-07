@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str='12 fff 87 er3334 233 -=-=fa80';
+        var arr=[];
+        var tmp='';
+
+        for(var i=0;i<str.length;i++)
+        {
+            if(str.charAt(i)>='0' && str.charAt(i)<='9')
+            {
+                tmp+=str.charAt(i);
+            }
+            else
+            {
+                if(tmp)
+                {
+                    arr.push(tmp);
+                    tmp='';
+                }
+            }
+        }
+        if(tmp)
+        {
+            arr.push(tmp);
+            tmp='';
+        }
+        alert(arr);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
